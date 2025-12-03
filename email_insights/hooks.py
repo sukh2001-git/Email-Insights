@@ -175,7 +175,7 @@ app_license = "mit"
 # ------------------------------
 #
 override_whitelisted_methods = {
-    "frappe.core.doctype.communication.email.mark_email_as_seen": "email_insights.email_insights.overrides.email.mark_email_as_seen",
+    "frappe.core.doctype.communication.email.mark_email_as_seen": "email_insights.overrides.email.mark_email_as_seen",
 }
 #
 # each overriding function accepts a `data` argument;
