@@ -174,9 +174,9 @@ app_license = "mit"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "email_insights.event.get_events"
-# }
+override_whitelisted_methods = {
+    "frappe.core.doctype.communication.email.mark_email_as_seen": "email_insights.email_insights.overrides.email.mark_email_as_seen",
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
