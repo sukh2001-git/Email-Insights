@@ -83,13 +83,13 @@ app_license = "mit"
 # ------------
 
 # before_install = "email_insights.install.before_install"
-# after_install = "email_insights.install.after_install"
+after_install = "email_insights.install.after_install"
 
 # Uninstallation
 # ------------
 
 # before_uninstall = "email_insights.uninstall.before_uninstall"
-# after_uninstall = "email_insights.uninstall.after_uninstall"
+after_uninstall = "email_insights.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
@@ -176,6 +176,7 @@ app_license = "mit"
 #
 override_whitelisted_methods = {
     "frappe.core.doctype.communication.email.mark_email_as_seen": "email_insights.overrides.email.mark_email_as_seen",
+    "frappe.core.doctype.communication.email.make": "email_insights.overrides.email.make",
 }
 #
 # each overriding function accepts a `data` argument;

@@ -6,6 +6,7 @@ def after_install():
     try:
         add_custom_fields_to_communication()
         add_custom_fields_to_email_campaign()
+        print("Custom fields added successfully after installation.")
     except Exception as e:
         frappe.log_error(f"Error occured after installing {APP_TITLE} app:", e)
 
@@ -19,6 +20,7 @@ def add_custom_fields_to_communication():
             "label": "Email Insights",
             "module": "Email Insights",
             "name": "Communication-email_insights_tab",
+            "insert_after": "feedback_request",
         },
         {
             "dt": "Communication",
@@ -36,7 +38,7 @@ def add_custom_fields_to_communication():
         if not frappe.db.exists("Custom Field", field["name"]):
             new_field = frappe.get_doc({"doctype": "Custom Field", **field})
             new_field.insert()
-            frappe.db.commit()
+    frappe.db.commit()
 
 
 def add_custom_fields_to_email_campaign():
@@ -48,6 +50,7 @@ def add_custom_fields_to_email_campaign():
             "label": "Email Insights",
             "module": "Email Insights",
             "name": "Email Campaign-email_insights_tab",
+            "insert_after": "status",
         },
         {
             "dt": "Email Campaign",
@@ -65,4 +68,4 @@ def add_custom_fields_to_email_campaign():
         if not frappe.db.exists("Custom Field", field["name"]):
             new_field = frappe.get_doc({"doctype": "Custom Field", **field})
             new_field.insert()
-            frappe.db.commit()
+    frappe.db.commit()
