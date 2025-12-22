@@ -129,9 +129,9 @@ after_uninstall = "email_insights.uninstall.after_uninstall"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Email Queue": "email_insights.overrides.email_queue.EmailQueueOverride"
+}
 
 # Document Events
 # ---------------
